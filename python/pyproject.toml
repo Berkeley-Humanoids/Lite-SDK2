@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lite_sdk2"
+version = "1.0.0"
+description = "CycloneDDS SDK for Berkeley Humanoid Lite low-level messaging."
+readme = "../README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "cyclonedds",
+    "loop-rate-limiters>=1.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+lite-sdk2-monitor = "lite_sdk2.monitor.cli:main"
+lite-sdk2-control = "lite_sdk2.control.cli:main"
+
+[tool.hatchling.build.targets.wheel]
+packages = ["lite_sdk2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120

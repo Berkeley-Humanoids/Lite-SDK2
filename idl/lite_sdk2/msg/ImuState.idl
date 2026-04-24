@@ -1,0 +1,18 @@
+#ifndef LITE_SDK2_MSG_IMU_STATE_IDL
+#define LITE_SDK2_MSG_IMU_STATE_IDL
+
+module lite_sdk2 {
+module msg {
+
+struct ImuState {
+    sequence<float, 4> quaternion;
+    sequence<float, 3> gyroscope;
+    sequence<float, 3> accelerometer;
+    sequence<float, 3> rpy;
+    float temperature;
+};
+
+};
+};
+
+#endif

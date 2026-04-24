@@ -1,0 +1,17 @@
+#ifndef LITE_SDK2_MSG_LOW_COMMAND_IDL
+#define LITE_SDK2_MSG_LOW_COMMAND_IDL
+
+#include "ActuatorCommand.idl"
+
+module lite_sdk2 {
+module msg {
+
+struct LowCommand {
+    unsigned long configuration;
+    sequence<ActuatorCommand> actuator_commands;
+};
+
+};
+};
+
+#endif

@@ -1,0 +1,21 @@
+#ifndef LITE_SDK2_MSG_LOW_STATE_IDL
+#define LITE_SDK2_MSG_LOW_STATE_IDL
+
+#include "ActuatorState.idl"
+#include "ImuState.idl"
+
+module lite_sdk2 {
+module msg {
+
+struct LowState {
+    unsigned long version;
+    unsigned long tick;
+    unsigned long configuration;
+    ImuState imu_state;
+    sequence<ActuatorState> actuator_states;
+};
+
+};
+};
+
+#endif

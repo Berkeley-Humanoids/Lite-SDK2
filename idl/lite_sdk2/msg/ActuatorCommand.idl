@@ -1,0 +1,19 @@
+#ifndef LITE_SDK2_MSG_ACTUATOR_COMMAND_IDL
+#define LITE_SDK2_MSG_ACTUATOR_COMMAND_IDL
+
+module lite_sdk2 {
+module msg {
+
+struct ActuatorCommand {
+    unsigned long mode;
+    float position;
+    float velocity;
+    float torque;
+    float kp;
+    float kd;
+};
+
+};
+};
+
+#endif
