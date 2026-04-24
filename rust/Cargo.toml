@@ -1,7 +1,7 @@
 [package]
 name = "lite_sdk2"
 version = "1.0.0"
-edition = "2026"
+edition = "2021"
 rust-version = "1.75"
 description = "Rust bindings for Berkeley Humanoid Lite SDK2 DDS messages."
 license = "MIT"
