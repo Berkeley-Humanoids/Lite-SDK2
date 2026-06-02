@@ -5,13 +5,10 @@ requires-python = ">=3.10"
 [[package]]
 name = "bar-msgs-dds"
 version = "0.0.1"
-source = { editable = "../bar_ws/src/bar_ros2/bar_msgs_dds" }
+source = { git = "https://github.com/T-K-233/bar_ros2.git?subdirectory=bar_msgs_dds#5291eb4f8112285900538e4eaa02a1439ffd4d44" }
 dependencies = [
     { name = "cyclonedds" },
 ]
-
-[package.metadata]
-requires-dist = [{ name = "cyclonedds", specifier = ">=0.10" }]
 
 [[package]]
 name = "click"
@@ -99,7 +96,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bar-msgs-dds", editable = "../bar_ws/src/bar_ros2/bar_msgs_dds" },
+    { name = "bar-msgs-dds", git = "https://github.com/T-K-233/bar_ros2.git?subdirectory=bar_msgs_dds" },
     { name = "cyclonedds", specifier = ">=0.10" },
     { name = "loop-rate-limiters", specifier = ">=1.2.0" },
 ]

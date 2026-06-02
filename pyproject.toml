@@ -31,11 +31,6 @@ packages = ["lite_sdk2"]
 [tool.hatch.metadata]
 allow-direct-references = true
 
-# Local-dev override: use the in-tree bar_msgs_dds (sibling bar_ws checkout)
-# instead of fetching the git dependency. Drop/adjust if the layout differs.
-[tool.uv.sources]
-bar_msgs_dds = { path = "../bar_ws/src/bar_ros2/bar_msgs_dds", editable = true }
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
