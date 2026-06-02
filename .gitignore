@@ -1,0 +1,15 @@
+# Python / packaging
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+
+# pytest / tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# OS / editor noise
+.DS_Store
+*.swp

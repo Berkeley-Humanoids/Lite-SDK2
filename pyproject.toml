@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lite_sdk2"
+version = "2.0.0"
+description = "CycloneDDS SDK for Berkeley Humanoid Lite — speaks bar_msgs over DDS (no rclpy)."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "cyclonedds>=0.10",
+    "loop-rate-limiters>=1.2.0",
+    "bar_msgs_dds @ git+https://github.com/T-K-233/bar_ros2.git#subdirectory=bar_msgs_dds",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+lite-sdk2-monitor = "lite_sdk2.monitor.cli:main"
+lite-sdk2-control = "lite_sdk2.control.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["lite_sdk2"]
+
+# The bar_msgs_dds dependency is a direct (git/path) reference; hatchling
+# requires this opt-in to allow it in project.dependencies.
+[tool.hatch.metadata]
+allow-direct-references = true
+
+# Local-dev override: use the in-tree bar_msgs_dds (sibling bar_ws checkout)
+# instead of fetching the git dependency. Drop/adjust if the layout differs.
+[tool.uv.sources]
+bar_msgs_dds = { path = "../bar_ws/src/bar_ros2/bar_msgs_dds", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
