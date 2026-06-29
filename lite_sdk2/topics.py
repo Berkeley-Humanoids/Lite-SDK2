@@ -1,10 +1,10 @@
-"""Default ROS topic + QoS for each bar_msgs type, matching the bar_ros2 bringup.
+"""Default ROS topic + QoS for each humanoid_control_msgs type, matching the bar_ros2 bringup.
 
 The host SDK and the robot must agree on topic name *and* QoS for DDS to pair a
 writer with a reader. These defaults mirror what the `bar_ros2` controllers
 declare; override per call with ``publisher(..., topic=, qos=)`` when needed.
 
-``ros_topic_to_dds`` is re-exported from ``bar_msgs_dds`` (the single canonical
+``ros_topic_to_dds`` is re-exported from ``humanoid_control_msgs_dds`` (the single canonical
 copy) so the SDK and the message package can never disagree on the ``rt/`` rule.
 """
 
@@ -13,7 +13,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
-from bar_msgs_dds import (
+from humanoid_control_msgs_dds import (
     ControlMode,
     JointState,
     MITCommand,

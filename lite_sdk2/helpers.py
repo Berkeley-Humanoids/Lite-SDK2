@@ -1,10 +1,10 @@
-"""Small constructors for common bar_msgs commands."""
+"""Small constructors for common humanoid_control_msgs commands."""
 
 from __future__ import annotations
 
 from collections.abc import Sequence
 
-from bar_msgs_dds import MITCommand
+from humanoid_control_msgs_dds import MITCommand
 
 __all__ = ["zero_mit_command"]
 

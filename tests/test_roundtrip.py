@@ -1,6 +1,6 @@
 """Local DDS loopback: a MITCommand written by a publisher is read back by a
 subscriber on the same topic, with fields intact. Exercises the full channel +
-QoS + bar_msgs_dds path in one process.
+QoS + humanoid_control_msgs_dds path in one process.
 """
 
 import pytest

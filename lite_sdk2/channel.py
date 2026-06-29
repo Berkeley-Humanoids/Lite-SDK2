@@ -2,7 +2,7 @@
 single-topic publisher/subscriber wrappers.
 
 This layer carries no message definitions — it works with any ``cyclonedds``
-``IdlStruct`` type. The bar_msgs types come from ``bar_msgs_dds``; the per-type
+``IdlStruct`` type. The humanoid_control_msgs types come from ``humanoid_control_msgs_dds``; the per-type
 default topic and QoS come from :mod:`lite_sdk2.topics`. Topic and QoS both
 default from the registry so ``publisher(MITCommand)`` "just works" against a
 ``bar_ros2`` bringup, but either can be overridden per call.

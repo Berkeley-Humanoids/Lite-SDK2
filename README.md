@@ -6,7 +6,7 @@ process on a host machine a publisher/subscriber API onto a robot running the
 
 ## What it provides
 
-- **Message types** — re-exported from `bar_msgs_dds`: `MITCommand`, `JointState`,
+- **Message types** — re-exported from `humanoid_control_msgs_dds`: `MITCommand`, `JointState`,
   `ControlMode`, `SafetyStatus`, `StandbyState` (+ `Header`/`Time`). These carry the
   rmw type-name mangling, so they interoperate with a live `bar_ros2` graph.
 - **A message-agnostic channel layer** — a process-wide DDS participant, NIC
@@ -19,7 +19,7 @@ process on a host machine a publisher/subscriber API onto a robot running the
 
 ```bash
 cd Lite-SDK2
-uv sync          # uses the in-tree bar_msgs_dds via [tool.uv.sources]
+uv sync          # uses the in-tree humanoid_control_msgs_dds via [tool.uv.sources]
 uv run pytest
 ```
 
@@ -42,7 +42,7 @@ dependencies = [
 | robot → host | `StandbyState` | `/standby_controller/state` | `rt/…` | transient-local (latched) |
 
 ROS topic names get the `rt/` prefix on the wire; the wire typename is
-`pkg::msg::dds_::Name_` (the rmw mangling). Both are handled by `bar_msgs_dds`.
+`pkg::msg::dds_::Name_` (the rmw mangling). Both are handled by `humanoid_control_msgs_dds`.
 
 ## Usage
 
@@ -76,17 +76,17 @@ Both take the network interface as the first argument; `--domain-id` selects the
 
 ## Adding or changing a message
 
-Messages live in `bar_ros2`, not here. Edit `bar_msgs/msg/*.msg`, run
-`pixi run gen-dds` to regenerate `bar_msgs_dds`, and the new/changed type is
+Messages live in `bar_ros2`, not here. Edit `humanoid_control_msgs/msg/*.msg`, run
+`pixi run gen-dds` to regenerate `humanoid_control_msgs_dds`, and the new/changed type is
 available through `lite_sdk2` automatically. There is no schema, IDL, or Rust
 mirror to keep in sync in this repo anymore.
 
 ## Architecture
 
 ```
-bar_msgs (.msg)      ← single source of truth, in bar_ros2
+humanoid_control_msgs (.msg)      ← single source of truth, in bar_ros2
    │ pixi run gen-dds
-bar_msgs_dds         ← generated cyclonedds types + topic/QoS conventions
+humanoid_control_msgs_dds         ← generated cyclonedds types + topic/QoS conventions
    │ pip dependency
 lite_sdk2 (this repo) ← message-agnostic channel layer + CLIs
    │

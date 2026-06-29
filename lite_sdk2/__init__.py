@@ -1,8 +1,8 @@
 """Lite SDK2 — host-side CycloneDDS access to a Berkeley Humanoid Lite running
 ``bar_ros2``, with no ``rclpy``.
 
-The SDK speaks ``bar_msgs`` directly: message types are re-exported from
-``bar_msgs_dds`` (generated, wire-compatible with ROS 2), and the
+The SDK speaks ``humanoid_control_msgs`` directly: message types are re-exported from
+``humanoid_control_msgs_dds`` (generated, wire-compatible with ROS 2), and the
 publisher/subscriber layer is message-agnostic.
 
     import lite_sdk2
@@ -20,7 +20,7 @@ publisher/subscriber layer is message-agnostic.
     pub.write(zero_mit_command(state.name, damping=2.0))   # park
 """
 
-from bar_msgs_dds import (
+from humanoid_control_msgs_dds import (
     ControlMode,
     Header,
     JointState,
@@ -45,7 +45,7 @@ from .channel import (
 from .helpers import zero_mit_command
 
 __all__ = [
-    # message types (from bar_msgs_dds)
+    # message types (from humanoid_control_msgs_dds)
     "ControlMode",
     "Header",
     "JointState",
