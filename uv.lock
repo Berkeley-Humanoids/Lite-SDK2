@@ -65,7 +65,7 @@ wheels = [
 [[package]]
 name = "humanoid-control-msgs-dds"
 version = "0.0.1"
-source = { git = "https://github.com/T-K-233/bar_ros2.git?subdirectory=humanoid_control_msgs_dds#8d13e5b985f8d5c0ed95f4d127b3321e0bd47824" }
+source = { git = "https://github.com/Berkeley-Humanoids/humanoid_control.git?subdirectory=humanoid_control_msgs_dds#0c41ea944e1806977d29793f752a36b914e9bdf0" }
 dependencies = [
     { name = "cyclonedds" },
 ]
@@ -97,7 +97,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "cyclonedds", specifier = ">=0.10" },
-    { name = "humanoid-control-msgs-dds", git = "https://github.com/T-K-233/bar_ros2.git?subdirectory=humanoid_control_msgs_dds" },
+    { name = "humanoid-control-msgs-dds", git = "https://github.com/Berkeley-Humanoids/humanoid_control.git?subdirectory=humanoid_control_msgs_dds" },
     { name = "loop-rate-limiters", specifier = ">=1.2.0" },
 ]
 

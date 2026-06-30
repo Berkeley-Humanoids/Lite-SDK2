@@ -1,4 +1,4 @@
-"""``lite-sdk2-monitor`` — subscribe to a bar_ros2 topic and print each sample.
+"""``lite-sdk2-monitor`` — subscribe to a humanoid_control topic and print each sample.
 
 Useful for confirming a publisher is on the wire and the QoS/typename line up.
 
@@ -25,7 +25,7 @@ _TYPES = {
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="lite-sdk2-monitor",
-        description="Subscribe to a bar_ros2 topic and print decoded samples.",
+        description="Subscribe to a humanoid_control topic and print decoded samples.",
     )
     parser.add_argument("network_interface", help="NIC to bind CycloneDDS to (e.g. enp2s0).")
     parser.add_argument("message", choices=sorted(_TYPES), help="Which stream to print.")
