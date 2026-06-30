@@ -5,7 +5,7 @@ This layer carries no message definitions — it works with any ``cyclonedds``
 ``IdlStruct`` type. The humanoid_control_msgs types come from ``humanoid_control_msgs_dds``; the per-type
 default topic and QoS come from :mod:`lite_sdk2.topics`. Topic and QoS both
 default from the registry so ``publisher(MITCommand)`` "just works" against a
-``humanoid_control`` bringup, but either can be overridden per call.
+``Humanoid Control`` bringup, but either can be overridden per call.
 """
 
 from __future__ import annotations

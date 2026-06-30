@@ -1,7 +1,7 @@
-"""Default ROS topic + QoS for each humanoid_control_msgs type, matching the humanoid_control bringup.
+"""Default ROS topic + QoS for each humanoid_control_msgs type, matching the Humanoid Control bringup.
 
 The host SDK and the robot must agree on topic name *and* QoS for DDS to pair a
-writer with a reader. These defaults mirror what the `humanoid_control` controllers
+writer with a reader. These defaults mirror what the `Humanoid Control` controllers
 declare; override per call with ``publisher(..., topic=, qos=)`` when needed.
 
 ``ros_topic_to_dds`` is re-exported from ``humanoid_control_msgs_dds`` (the single canonical
@@ -26,7 +26,7 @@ from humanoid_control_msgs_dds import (
 
 __all__ = ["default_topic", "default_qos", "ros_topic_to_dds"]
 
-# ROS topic names as declared by the humanoid_control bringup.
+# ROS topic names as declared by the Humanoid Control bringup.
 COMMAND = "/remote_policy_controller/command"
 JOINT_STATES = "/lite/joint_states"
 CONTROL_MODE = "/control_mode"

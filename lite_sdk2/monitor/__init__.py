@@ -1,1 +1,1 @@
-"""`lite-sdk2-monitor` — print a humanoid_control topic stream as it arrives."""
+"""`lite-sdk2-monitor` — print a Humanoid Control topic stream as it arrives."""
