@@ -1,5 +1,5 @@
 """Lite SDK2 — host-side CycloneDDS access to a Berkeley Humanoid Lite running
-``bar_ros2``, with no ``rclpy``.
+``humanoid_control``, with no ``rclpy``.
 
 The SDK speaks ``humanoid_control_msgs`` directly: message types are re-exported from
 ``humanoid_control_msgs_dds`` (generated, wire-compatible with ROS 2), and the

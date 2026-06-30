@@ -13,7 +13,7 @@ requires-python = ">=3.10"
 dependencies = [
     "cyclonedds>=0.10",
     "loop-rate-limiters>=1.2.0",
-    "humanoid_control_msgs_dds @ git+https://github.com/T-K-233/bar_ros2.git#subdirectory=humanoid_control_msgs_dds",
+    "humanoid_control_msgs_dds @ git+https://github.com/Berkeley-Humanoids/humanoid_control.git#subdirectory=humanoid_control_msgs_dds",
 ]
 
 [dependency-groups]
